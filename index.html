@@ -217,7 +217,7 @@
     content: ""; position: absolute; top: 18px; left: 50%; translate: -50% 0;
     width: 92px; height: 7px; border-radius: 5px; background: #05060c; z-index: 3;
   }
-  .screen { width: 100%; height: 100%; border-radius: 30px; overflow: hidden; display: block; background: #0c1024; }
+  .screen { width: 100%; height: 100%; border-radius: 30px; overflow: hidden; display: block; background: #0c1024; object-fit: cover; }
   .tilt { transition: transform .5s cubic-bezier(.2,.7,.2,1); }
   .device:hover .tilt { transform: rotateY(-7deg) rotateX(3deg); }
   @media (prefers-reduced-motion: reduce) { .device:hover .tilt { transform: none; } }
@@ -370,58 +370,13 @@
     <div class="flag">
       <div class="device">
         <div class="tilt" style="width:100%;height:100%">
-          <svg class="screen" viewBox="0 0 280 568" preserveAspectRatio="xMidYMid slice" role="img" aria-label="LadderQuest gameplay: merging coloured ladder parts to climb a tower">
-            <defs>
-              <linearGradient id="sky2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a1a4e"/><stop offset=".5" stop-color="#3b2f72"/><stop offset="1" stop-color="#5b4aa0"/></linearGradient>
-              <linearGradient id="bld" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6d7bd6"/><stop offset="1" stop-color="#4a56a8"/></linearGradient>
-            </defs>
-            <rect width="280" height="568" fill="url(#sky2)"/>
-            <g fill="#fff" opacity=".5"><circle cx="40" cy="60" r="1.3"/><circle cx="210" cy="44" r="1.6"/><circle cx="150" cy="90" r="1"/><circle cx="246" cy="120" r="1.3"/><circle cx="70" cy="110" r="1"/></g>
-            <circle cx="214" cy="92" r="30" fill="#ffd27a" opacity=".92"/>
-            <circle cx="214" cy="92" r="44" fill="#ffd27a" opacity=".18"/>
-            <path d="M0 250 Q70 205 150 245 T280 235 V568 H0Z" fill="#43407e" opacity=".7"/>
-            <rect x="92" y="150" width="96" height="340" rx="8" fill="url(#bld)"/>
-            <rect x="92" y="150" width="96" height="340" rx="8" fill="none" stroke="#2b3170" stroke-width="2"/>
-            <g>
-              <rect x="106" y="172" width="20" height="26" rx="3" fill="#8be0ff" opacity=".9"/>
-              <rect x="154" y="172" width="20" height="26" rx="3" fill="#8be0ff" opacity=".9"/>
-              <rect x="106" y="214" width="20" height="26" rx="3" fill="#ffc57a" opacity=".9"/>
-              <rect x="154" y="214" width="20" height="26" rx="3" fill="#ffc57a" opacity=".9"/>
-              <rect x="106" y="256" width="20" height="26" rx="3" fill="#9affc0" opacity=".9"/>
-              <rect x="154" y="256" width="20" height="26" rx="3" fill="#9affc0" opacity=".9"/>
-              <rect x="106" y="298" width="20" height="26" rx="3" fill="#d6a8ff" opacity=".9"/>
-              <rect x="154" y="298" width="20" height="26" rx="3" fill="#d6a8ff" opacity=".9"/>
-            </g>
-            <path d="M110 150 Q140 112 170 150 Z" fill="#ffc24d"/>
-            <rect x="138" y="96" width="3" height="20" fill="#fff"/>
-            <path d="M141 97 l16 6 -16 6 Z" fill="#ff6a6a"/>
-            <g stroke="#ffd9a0" stroke-width="4" stroke-linecap="round">
-              <line x1="128" y1="330" x2="128" y2="470"/><line x1="152" y1="330" x2="152" y2="470"/>
-              <line x1="128" y1="350" x2="152" y2="350"/><line x1="128" y1="378" x2="152" y2="378"/>
-              <line x1="128" y1="406" x2="152" y2="406"/><line x1="128" y1="434" x2="152" y2="434"/>
-            </g>
-            <g transform="translate(132 352)">
-              <ellipse cx="8" cy="30" rx="12" ry="7" fill="#000" opacity=".18"/>
-              <rect x="0" y="6" width="16" height="20" rx="7" fill="#6b4a32"/>
-              <circle cx="8" cy="3" r="7" fill="#e7b58a"/>
-              <path d="M1 2 Q8 -6 15 2 Q8 -1 1 2Z" fill="#3a2b20"/>
-              <rect x="-4" y="10" width="7" height="4" rx="2" fill="#e7b58a"/>
-              <rect x="13" y="8" width="7" height="4" rx="2" fill="#e7b58a"/>
-            </g>
-            <rect x="0" y="498" width="280" height="70" fill="#1b1838"/>
-            <rect x="0" y="498" width="280" height="3" fill="#ffffff" opacity=".12"/>
-            <g rx="8">
-              <rect x="18"  y="512" width="42" height="42" rx="10" fill="#4aa3ff"/>
-              <rect x="70"  y="512" width="42" height="42" rx="10" fill="#46d08a"/>
-              <rect x="122" y="512" width="42" height="42" rx="10" fill="#ff6a6a"/>
-              <rect x="174" y="512" width="42" height="42" rx="10" fill="#b17bff"/>
-              <rect x="226" y="512" width="42" height="42" rx="10" fill="#ffc24d"/>
-            </g>
-            <g stroke="#ffffff" stroke-width="3" stroke-linecap="round" opacity=".85">
-              <line x1="33" y1="533" x2="45" y2="533"/><line x1="39" y1="527" x2="39" y2="539"/>
-              <line x1="85" y1="533" x2="97" y2="533"/><line x1="91" y1="527" x2="91" y2="539"/>
-            </g>
-          </svg>
+          <video class="screen" autoplay muted loop playsinline preload="metadata"
+                 poster="/assets/ladderquest-hero-poster.jpg"
+                 aria-label="LadderQuest gameplay: Bob merges ladder parts and climbs a tower to rescue his friends">
+            <source src="/assets/ladderquest-hero.webm" type="video/webm">
+            <source src="/assets/ladderquest-hero.mp4" type="video/mp4">
+            <img src="/assets/ladderquest-hero-poster.jpg" alt="LadderQuest gameplay">
+          </video>
         </div>
       </div>
 
@@ -617,6 +572,15 @@
     function start() { size(); seed(); if (raf) cancelAnimationFrame(raf); if (reduce) { frame(); cancelAnimationFrame(raf); } else frame(); }
     window.addEventListener('resize', function () { size(); seed(); });
     start();
+  })();
+
+  (function () {
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    document.querySelectorAll('video[autoplay]').forEach(function (v) {
+      v.autoplay = false;
+      v.removeAttribute('autoplay');
+      try { v.pause(); } catch (e) {}
+    });
   })();
 
   (function () {
